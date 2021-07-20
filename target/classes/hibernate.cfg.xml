@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   
+   <session-factory>
+      <!-- This property makes Hibernate generate the appropriate SQL for the chosen database.-->
+      <property name = "hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+      
+      <!-- The JDBC driver class. -->
+      <property name = "hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+      
+      <!-- The JDBC URL to the database instance. -->
+      <property name = "hibernate.connection.url">jdbc:mysql://localhost/user_management</property>
+      
+      <!-- The database user name. -->
+      <property name = "hibernate.connection.username">root</property>
+      
+      <!-- The database password. -->
+      <property name = "hibernate.connection.password">root</property>
+      
+      <!-- Drops and recreates the database schema on startup. -->
+      <property name = "hbm2ddl.auto">create</property>
+      
+      <!-- Drops and recreates the database schema on startup. -->
+      <property name = "show_sql">true</property>
+      
+      <!-- Limits the number of connections waiting in the Hibernate database connection pool. -->
+      <property name = "hibernate.connection.pool_size">15</property>
+       
+      
+      <!-- List of XML mapping files <mapping resource = "Employee.hbm.xml"/>  -->
+      
+      <!-- Name the annotated entity class   -->
+      <mapping class = "com.hibernateapp.dto.StudentDTO"/>  
+      <mapping class = "com.hibernateapp.dto.CollegeDTO"/>  
+       
+   </session-factory>
+   
+</hibernate-configuration>
